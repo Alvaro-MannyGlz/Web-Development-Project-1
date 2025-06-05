@@ -1,0 +1,10 @@
+/* Hello this is my first time working with CSS */
+
+body {
+    background-color: darkolivegreen;
+}
+
+h1, p {
+    color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
