@@ -1,10 +1,331 @@
-/* Hello this is my first time working with CSS */
+/*
+This is the style being applied
+to our CSS example.
+*/
 
-body {
-    background-color: darkolivegreen;
+/* CSS custom property (variable) for a color, commented out here */
+/* :root {
+    --springfrost: #87FF2A;
+} */
+
+/* Define a custom property with type checking for color */
+@property --springfrost {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #87FF2A;
 }
 
+/* Set a background image for the whole page and remove default margin */
+body {
+    /* Use a repeating linear-gradient to mimic a simple camo pattern */
+    background-color: #3b4d3b; /* fallback color */
+    background-image: 
+        repeating-linear-gradient(135deg, #4b5e3b 0 40px, #5c7a3b 40px 80px, #3b4d3b 80px 120px),
+        repeating-linear-gradient(45deg, #6b8e23 0 30px, #556b2f 30px 60px, transparent 60px 90px);
+    background-blend-mode: multiply;
+    background-size: 120px 120px, 90px 90px;
+    background-repeat: repeat;
+    margin: 0;
+}
+
+/* Style all h1 and p elements with beige color and sans-serif font */
 h1, p {
     color: beige;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style elements with class 'p-class' for emphasis */
+.p-class {
+    color: yellow;
+    text-align: justify;
+    width: 450px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+/* Style element with id 'p-id' */
+#p-id {
+    color: lightgreen;
+}
+
+/* Style glossary definition terms */
+dl.glossary dt {
+    color: orangered;
+    font-family: monospace;
+    font-size: 120%;
+}
+
+/* Style glossary definitions */
+dl.glossary dd {
+    color: lightblue;
+    font-family: monospace;
+    font-size: 120%;
+}
+
+/* Style all buttons with green background and rounded corners */
+button {
+    background-color: lightgreen;
+    font-size: 120%;
+    border: 0px;
+    border-radius: 5%;
+}
+
+/* Change button background on hover */
+button:hover {
+    background-color: green;
+}
+
+/* Make the first letter of every paragraph larger */
+p::first-letter {
+    font-size: 160%;
+}
+
+/* Style all links */
+a {
+    color: powderblue;
+    text-decoration: none;
+}
+
+/* Change link color on hover */
+a:hover {
+    color: rgb(137, 137, 155);
+}
+
+/* Change link color when active (clicked) */
+a:active {
+    color:rgb(71, 71, 80);
+}
+
+/* Add a dashed border to all definition lists */
+dl {
+    border: 1px dashed plum;
+}
+
+/* Example nav bar styling (currently commented out) */
+/*
+nav {
+    background-color: forestgreen;
+    width: 100vw;
+    padding: 1em;
+    box-sizing: border-box;
+}
+*/
+
+/* Add padding to elements with class 'top-container' */
+.top-container {
+    padding: 2em;
+}
+
+/* Add margin to tables */
+table {
+    margin-top: 0.3em;
+}
+
+/* Style tables and their cells */
+table, th, td {
+    color: beige;
+    border-bottom: 1px solid beige;
+    border-collapse: collapse;
+}
+
+/* Add padding and center text in table cells */
+td {
+    padding: 1em;
+    text-align: center;
+}
+
+/* Style unordered lists for navigation bars */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 2.9em;
+  background-color: forestgreen;
+  position: sticky;
+  top: 0;
+}
+
+/* Float list items left for horizontal nav */
+li {
+  float: left;
+}
+
+/* Style links inside list items */
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+/* Change background color of nav links on hover */
+li a:hover {
+  background-color: darkgreen;
+}
+
+/* Style forms */
+form {
+    background-color: beige;
+    padding: 0.2em;
+    width: 25%;
+}
+
+/* Stack labels and inputs vertically with spacing */
+label, input {
+    display: block;
+    margin: 0.2em;
+}
+
+/* Style text inputs */
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.2em;
+    outline: none;
+}
+
+/* Highlight text input on focus */
+input[type="text"]:focus {
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+/* Style submit buttons */
+input[type="submit"] {
+    margin-top: 0.3em;  
+    width: 25%;
+    background-color: mediumseagreen;
+    color: antiquewhite;
+    border: 0;
+    border-radius: 5%;
+}
+
+/* Change submit button color on hover */
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+/* Style a search input with a background image */
+#search {
+    background-image: url('./mag-glass.png');
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    padding-left: 1.5em;
+    /* display: none; */
+}
+
+/* Dropdown menu content hidden by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: forestgreen;
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Center and style a template container */
+#align-template {
+    margin: auto;
+    padding: 5em 1em;
+    border: 3px solid yellow;
+}
+
+/* Flexbox container for layout */
+.flex-container {
+    display: flex;
+    margin-top: 1em;
+    background-color: dodgerblue;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    height: 500px;
+    align-items: center;
+}
+
+/* Style flex items */
+.flex-item {
+    background-color: beige;
+    font-size: 3em;
+    margin: 0.5em;
+    padding: 1em;
+}
+
+/* Grid container for layout */
+.grid-container {
+    display: grid;
+    margin-top: 1em;
+    background-color: dodgerblue;
+    grid-template-columns: auto auto auto;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+/* Style grid items */
+.grid-item {
+    background-color: beige;
+    font-size: 3em;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Assign grid areas for advanced layouts */
+#grid-header { grid-area: header; }
+#grid-menu { grid-area: menu; }
+#grid-main { grid-area: main; }
+#grid-right { grid-area: right; }
+#grid-footer { grid-area: footer; }
+
+/* Container using named grid areas */
+.grid-area-container {
+    display: grid;
+    margin-top: 1em;
+    background-color: dodgerblue;
+    grid-template-columns: auto auto auto;
+    padding: 0.5em;
+    gap: 0.5em;
+    grid-template-areas: 
+        'header header header header header header'
+        'menu main main main main right'
+        'menu footer footer footer footer footer';
+}
+
+/* Style all direct divs inside grid-area-container */
+.grid-area-container  div {
+    background-color: beige;
+    font-size: 3em;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 992px) {
+    .grid-area-container {
+        grid-template-areas:
+            'menu header header header header header'
+            'menu main main main main right'
+            'menu footer footer footer footer footer';
+    }
+
+    .grid-area-container  div {
+        font-size: 1.5em;
+        padding: 0.5em;
+    }
+
+    .flex-container {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .flex-item {
+        flex: 100%;
+    }
+}
+
+/* Example of using a CSS variable for color */
+.var-color-template {
+    color: var(--springfrost);
 }
