@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: darkslategrey;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            background: rgba(170, 159, 159, 0.982);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .gallery-item .caption {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+        @media (max-width: 800px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <h1>Night-themed Gallery</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/4017682/pexels-photo-4017682.jpeg" alt="Image 1">
+            <div class="caption">Bus Stop</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/2820966/pexels-photo-2820966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Sky</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/4220967/pexels-photo-4220967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Volcano</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/1327786/pexels-photo-1327786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Galaxy</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/2376799/pexels-photo-2376799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Alley</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/421129/pexels-photo-421129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Train Station</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/3489072/pexels-photo-3489072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Moon</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/939807/pexels-photo-939807.jpeg" alt="Image 2">
+            <div class="caption">Gas Station</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Mountains</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/2129796/pexels-photo-2129796.png" alt="Image 2">
+            <div class="caption">Skyscrapers</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/91216/pexels-photo-91216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Aurora</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/3066867/pexels-photo-3066867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2">
+            <div class="caption">Traffic</div>
+        </div>
+    </div>
+</body>
+</html>
