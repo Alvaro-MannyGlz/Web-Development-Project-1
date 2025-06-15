@@ -1,157 +1,111 @@
-/*Starting CSS file*/
+/* Set a camo green background pattern for the whole page */
 body {
-    background-color: #3b4d3b;
-    background-image: 
-        repeating-linear-gradient(135deg, #4b5e3b 0 40px, #5c7a3b 40px 80px, #3b4d3b 80px 120px),
-        repeating-linear-gradient(45deg, #6b8e23 0 30px, #556b2f 30px 60px, transparent 60px 90px);
-    background-blend-mode: multiply;
-    background-size: 120px 120px, 90px 90px;
-    background-repeat: repeat;
-    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px;
+    background: darkslategrey;
+}
+
+/* Welcome section with a background image and centered text */
+.main {
+    background-image: url(https://images.pexels.com/photos/1755683/pexels-photo-1755683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position: fixed;    
 }
 
 .welcome {
-    background-image: url('https://images.pexels.com/photos/6755147/pexels-photo-6755147.jpeg'); 
-    background-size: cover;
-    background-position: center;
-    padding: 60px 0; 
     text-align: center;
-    color: white;
-    margin: 40px auto;
+    color: beige;
+    font-size: 25px; 
+    margin-top: -80px;
+    padding: 20px;
 }
 
-/* Style all h1 and p elements with beige color and sans-serif font */
-h1, p {
+/* double spaced (more area) */
+.description p {
+    line-height: 2;
+}
+
+.description {
+    text-align: left;
+    margin-bottom: 40px;
     color: beige;
+    font-size: larger;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; 
+}
+
+.link {
+    text-align: left;
+    color: beige;
+    margin-top: 60px;
+    font-size: larger;
+}
+
+/* Navigation bar styles */
+nav {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style elements with class 'p-class' for emphasis */
-.p-class {
-    color: yellow;
-    text-align: justify;
-    width: 450px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 160%;
-    font-weight: bold;
-}
-
-/* Style element with id 'p-id' */
-#p-id {
-    color: lightgreen;
-}
-
-/* Style glossary definition terms */
-dl.glossary dt {
-    color: orangered;
-    font-family: monospace;
-    font-size: 120%;
-}
-
-/* Style glossary definitions */
-dl.glossary dd {
-    color: lightblue;
-    font-family: monospace;
-    font-size: 120%;
-}
-
-/* Style all buttons with green background and rounded corners */
-button {
-    background-color: lightgreen;
-    font-size: 120%;
-    border: 0;
-    border-radius: 8px;
-}
-
-button:hover {
-    background-color: green;
-}
-
-a {
-    color: powderblue;
-    text-decoration: none;
-}
-
-a:hover {
-    color: rgb(137, 137, 155);
-}
-
-a:active {
-    color: rgb(71, 71, 80);
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: forestgreen;
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
     display: flex;
-    flex-wrap: wrap;
+    margin: 1rem;
+    background-color: beige;
+    border-radius: 5px;
+    width: 230px;
 }
 
-li {
-    float: none;
-}
-
-li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-}
-
-li a:hover {
-    background-color: darkgreen;
-}
-
-table, th, td {
-    color: beige;
-    border: 1px solid beige;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 1em;
+nav a {
+    padding: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
     text-align: center;
 }
 
-table {
-    margin-top: 0.3em;
-
+/* This will be the style for gallery.html */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+ /* Outside box */
+.gallery-item {
+    background: beige;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
 }
 
-@media only screen and (max-width: 1025px){
+/* Image size reduction */
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Word Font and Size */
+.gallery-item .caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
     .gallery {
-        grid-template-columns: repeat(3, minmax(320px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-
-@media only screen and (max-width: 768px){
+@media (max-width: 500px) {
     .gallery {
-        grid-template-columns: repeat(2, minmax(320px, 1fr));
-    }
-}
-
-@media only screen and (max-width: 430px){
-    .header {
-        display: grid; 
-        justify-content: center;
-    }
-    .gallery {
-        grid-template-columns: repeat(1, minmax(320px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
